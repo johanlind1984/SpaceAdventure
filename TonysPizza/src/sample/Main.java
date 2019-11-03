@@ -19,6 +19,10 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        ChefTerminal chef1Terminal = new ChefTerminal("Chef1");
+        ChefTerminal chef2Terminal = new ChefTerminal("Chef2");
+        ChefTerminal chef3Terminal = new ChefTerminal("Chef3");
+        ChefTerminal chef4Terminal = new ChefTerminal("Chef4");
 
         Ingredient ham = new Ingredient("Ham", 0.99);
         Ingredient cheese = new Ingredient("Cheese", 1.99);
@@ -48,7 +52,7 @@ public class Main extends Application {
         ingredients.add(tomatosauce);
         ingredients.add(cheese);
         ingredients.add(shrimp);
-        Pizza bussola = new Pizza("Cappriciosa", 8.00, ingredients);
+        Pizza bussola = new Pizza("Bussola", 8.00, ingredients);
         ingredients.clear();
 
         ingredients.add(tomatosauce);
@@ -56,7 +60,6 @@ public class Main extends Application {
         ingredients.add(olives);
         Pizza olivia = new Pizza("Olivia", 7.50, ingredients);
         ingredients.clear();
-
 
         // launch(args);
     }
