@@ -7,7 +7,7 @@ public class HardwareCreditCardReader {
     }
 
     public static int getCC() {
-        return -1;
+        return 44225544;
     }
 
     public static boolean requestPayment(int cardnumber, double price) {

@@ -5,8 +5,13 @@ import java.util.Queue;
 
 public class ChefTerminal {
 
-    String name;
+    private String name;
     private Queue<Pizza> queueOfPizzasToBake;
+
+    // CONSIDER USING A ENUM INSTEAD OF CONSTANTS IN CLASS
+    private static final int ORDER_NOT_TAKEN = 0;
+    private static final int ORDER_IS_PROCESSING = 1;
+    private static final int ORDER_IS_DONE = 2;
 
     public ChefTerminal(String name) {
         this.name = name;
@@ -25,6 +30,14 @@ public class ChefTerminal {
         }
 
         return false;
+    }
+
+    private void startOrder(Pizza pizza) {
+        pizza.setOrderStatus(ORDER_IS_PROCESSING);
+    }
+
+    private void doneOrder(Pizza pizza) {
+        pizza.setOrderStatus(ORDER_IS_DONE);
     }
 
     public Queue<Pizza> getPizzasToBakeQueue() {

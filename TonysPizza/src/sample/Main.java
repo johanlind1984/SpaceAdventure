@@ -1,5 +1,6 @@
 package sample;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -59,7 +60,35 @@ public class Main extends Application {
         ingredients.add(cheese);
         ingredients.add(olives);
         Pizza olivia = new Pizza("Olivia", 7.50, ingredients);
-        ingredients.clear();
+        CustomerTerminal terminal1 = new CustomerTerminal();
+
+        terminal1.addPizzaToShoppingCart(bussola);
+        cappriciosa.addExtraIngredient(olives);
+        cappriciosa.addExtraIngredient(shrimp);
+        terminal1.addPizzaToShoppingCart(cappriciosa);
+        terminal1.removeIngredientFromPizza(olives,cappriciosa);
+        terminal1.addPizzaToShoppingCart(cappriciosa);
+        cappriciosa.removeIngredient(mushrooms);
+        terminal1.addPizzaToShoppingCart(cappriciosa);
+        cappriciosa.addExtraIngredient(mushrooms);
+        terminal1.addPizzaToShoppingCart(cappriciosa);
+
+
+        ArrayList pizzas = terminal1.getPizzaInCart();
+
+        for (int i = 0; i < pizzas.size(); i++) {
+            Pizza tempPizza = (Pizza) pizzas.get(i);
+            System.out.println(tempPizza.getName() + " ===================");
+            for (Ingredient included : tempPizza.getIncludedIngredients()) {
+                System.out.println(included.getName());
+            }
+            for (Ingredient extra : tempPizza.getExtraIngredients()) {
+                System.out.println(extra.getName());
+            }
+
+
+
+        }
 
         // launch(args);
     }

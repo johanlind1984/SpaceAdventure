@@ -1,5 +1,7 @@
 package sample;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class Pizza {
@@ -8,15 +10,18 @@ public class Pizza {
     private final double price;
     private final ArrayList<Ingredient> includedIngredients;
     private ArrayList<Ingredient> extraIngredients;
+    private int orderStatus;
+    private int orderNumber;
 
     public Pizza(String name, double price, ArrayList<Ingredient> includedIngredients) {
         this.name = name;
         this.price = price;
-        this.includedIngredients = includedIngredients;
+        this.includedIngredients = new ArrayList<>(includedIngredients);
         this.extraIngredients = new ArrayList<>();
+        this.orderStatus = 0;
     }
 
-    public void addExtraIngredients(Ingredient extraIngredient) {
+    public void addExtraIngredient(Ingredient extraIngredient) {
         extraIngredients.add(extraIngredient);
 
     }
@@ -38,6 +43,18 @@ public class Pizza {
         }
 
         return false;
+    }
+
+    public void setOrderStatus(int orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public int getOrderStatus() {
+        return orderStatus;
+    }
+
+    public int getOrderNumber() {
+        return orderNumber;
     }
 
     public String getName() {
