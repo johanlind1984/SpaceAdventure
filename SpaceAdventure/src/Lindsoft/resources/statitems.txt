@@ -1,0 +1,7 @@
+Sandwitch:5:0:0
+Pizza:5:0:0
+Soda:0:1:0
+Juice:0:1:0
+Chicken:10:0:0
+Energydring:0:0:0.1
+Battery:5:0:0.2
