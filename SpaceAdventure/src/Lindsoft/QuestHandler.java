@@ -20,9 +20,9 @@ public class QuestHandler {
     }
 
     private void readInQuests() {
-        // Consider splitting try block and loop into two different methods for readability.
+        // Consider splitting try block and loop into two different methods for readability. Lindsoft/resources/quests.txt
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("src\\Lindsoft\\resources\\quests.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("SpaceAdventure\\src\\Lindsoft\\resources\\quests.txt"))) {
 
             String questToAdd;
             while(((questToAdd = reader.readLine()) != null)) {

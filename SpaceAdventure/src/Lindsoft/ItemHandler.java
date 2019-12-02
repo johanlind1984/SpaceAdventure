@@ -28,11 +28,10 @@ public class ItemHandler {
     }
 
     private void createShotItems() {
-
     }
 
     private void createStatItems() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("src\\Lindsoft\\resources\\statitems.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("SpaceAdventure\\src\\Lindsoft\\resources\\statitems.txt"))) {
 
             String statItemToAdd;
             while(((statItemToAdd = reader.readLine()) != null)) {
